@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  
+  <!-- <view>
+    <text wx:for="{{testArr}}">{{index}}:{{item.name}},</text>
+  </view> -->
+
+ <!-- <view>
+    <text wx:for="{{testArr}}" wx:for-index="idx" wx:for-item="elem">
+      {{idx}}:{{elem.name}},
+    </text>
+  </view> -->
+
+  <view class="introduce">
+    <text class="username">{{mineInfo.name}}</text> 
+    <!-- <text class="hobby">{{mineInfo.hobby}}</text> -->
+    <button id="test" class="test" bindtap="showMe">show me</button>
+  </view>
+
+  <view class="enter">
+    <!-- <button>进入</button> -->
+    <navigator class="go-enter" open-type="navigateTo" url="../logs/logs">进入</navigator>
+  </view>
+
+</view>
